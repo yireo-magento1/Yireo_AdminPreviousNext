@@ -1,0 +1,5 @@
+# Modman file
+source/app/code/community/Yireo/AdminPreviousNext app/code/community/Yireo/AdminPreviousNext
+source/app/design/adminhtml/default/default/layout/* app/design/adminhtml/default/default/layout/
+source/app/design/adminhtml/default/default/template/* app/design/adminhtml/default/default/template/
+source/app/etc/modules/Yireo_AdminPreviousNext.xml app/etc/modules/

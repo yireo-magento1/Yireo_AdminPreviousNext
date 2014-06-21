@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo AdminPreviousNext for Magento 
+ *
+ * @package     Yireo_AdminPreviousNext
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2014 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+-->
+<config>
+
+    <modules>
+        <Yireo_AdminPreviousNext>
+            <version>0.0.1</version>
+        </Yireo_AdminPreviousNext>
+    </modules>
+
+    <global>
+        <blocks>
+            <adminpreviousnext>
+                <class>Yireo_AdminPreviousNext_Block</class>
+            </adminpreviousnext>
+        </blocks>
+
+        <helpers>
+            <adminpreviousnext>
+                <class>Yireo_AdminPreviousNext_Helper</class>
+            </adminpreviousnext>
+        </helpers>
+
+        <models>
+            <adminpreviousnext>
+                <class>Yireo_AdminPreviousNext_Model</class>
+            </adminpreviousnext>
+        </models>
+	</global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <adminpreviousnext>
+                    <file>adminpreviousnext.xml</file>
+                </adminpreviousnext>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Yireo_AdminPreviousNext>
+                    <files>
+                        <default>Yireo_AdminPreviousNext.csv</default>
+                    </files>
+                </Yireo_AdminPreviousNext>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <adminpreviousnext>
+                                            <title>Yireo_AdminPreviousNext Settings</title>
+                                        </adminpreviousnext>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <adminpreviousnext>
+            <settings>
+                <load_jquery>1</load_jquery>
+            </settings>
+        </adminpreviousnext>
+    </default>
+</config>

@@ -1,0 +1,8 @@
+<config>
+   <modules>
+      <Yireo_AdminPreviousNext>
+         <active>true</active>
+         <codePool>community</codePool>
+      </Yireo_AdminPreviousNext>
+   </modules>
+</config>

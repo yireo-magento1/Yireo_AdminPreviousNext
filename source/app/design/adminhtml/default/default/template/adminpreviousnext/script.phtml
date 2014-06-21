@@ -1,0 +1,26 @@
+<?php
+$previousId = Mage::helper('adminpreviousnext')->getPreviousProduct();
+if($previousId > 0) {
+    $previousUrl = $this->getUrl('adminhtml/catalog_product/edit', array('id' => $previousId));
+}
+
+$nextId = Mage::helper('adminpreviousnext')->getNextProduct();
+if($nextId > 0) {
+    $nextUrl = $this->getUrl('adminhtml/catalog_product/edit', array('id' => $nextId));
+}
+?>
+<script>
+<?php if(!empty($previousUrl)) : ?>
+var previousHtml = '<button type="button" class="back" onclick="setLocation(\'<?php echo $previousUrl; ?>\');"'
+    + '<span><span><span>' + 'Previous' + '</span></span></span>'
+    + '</button>';
+jQuery('p.form-buttons').append(previousHtml);
+<?php endif; ?>
+
+<?php if(!empty($nextUrl)) : ?>
+var nextHtml = '<button type="button" class="back" onclick="setLocation(\'<?php echo $nextUrl; ?>\');"'
+    + '<span><span><span>' + 'Next' + '</span></span></span>'
+    + '</button>';
+jQuery('p.form-buttons').append(nextHtml);
+<?php endif; ?>
+</script>
