@@ -1,0 +1,22 @@
+<?php
+/**
+ * Yireo AdminPreviousNext for Magento 
+ *
+ * @package     Yireo_AdminPreviousNext
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2014 Yireo (http://www.yireo.com/)
+ * @license     Open Source License
+ */
+
+$next = $this->getNext();
+?>
+<script>
+<?php if(!empty($next)) : ?>
+var nextHtml = '<button type="button" class="back next" '
+    + 'title="<?php echo $next->getName(); ?>" '
+    + 'onclick="setLocation(\'<?php echo $next->getUrl(); ?>\');">'
+    + '<span><span><span><?php echo $next->getLabel(); ?></span></span></span>'
+    + '</button>';
+jQuery('p.form-buttons').append(nextHtml);
+<?php endif; ?>
+</script>

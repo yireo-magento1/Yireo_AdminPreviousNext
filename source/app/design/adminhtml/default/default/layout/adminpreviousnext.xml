@@ -1,13 +1,41 @@
 <?xml version="1.0"?>
 <layout>
     <adminhtml_catalog_product_edit>
+        <update handle="adminpreviousnext" />
+        <reference name="adminpreviousnext">
+            <block type="adminpreviousnext/product" name="adminpreviousnext.previous" template="adminpreviousnext/previous.phtml" />
+            <block type="adminpreviousnext/product" name="adminpreviousnext.next" template="adminpreviousnext/next.phtml" />
+        </reference>
+    </adminhtml_catalog_product_edit>
+
+    <adminhtml_customer_edit>
+        <update handle="adminpreviousnext" />
+        <reference name="adminpreviousnext">
+            <block type="adminpreviousnext/customer" name="adminpreviousnext.previous" template="adminpreviousnext/previous.phtml" />
+            <block type="adminpreviousnext/customer" name="adminpreviousnext.next" template="adminpreviousnext/next.phtml" />
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_sales_order_view>
+        <update handle="adminpreviousnext" />
+        <reference name="adminpreviousnext">
+            <block type="adminpreviousnext/order" name="adminpreviousnext.previous" template="adminpreviousnext/previous.phtml" />
+            <block type="adminpreviousnext/order" name="adminpreviousnext.next" template="adminpreviousnext/next.phtml" />
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <adminpreviousnext>
         <reference name="head">
             <action method="addItem" ifconfig="adminpreviousnext/settings/load_jquery">
                 <type>skin_js</type><name>js/adminpreviousnext/jquery.js</name>
             </action>
+            <action method="addItem">
+                <type>skin_css</type><name>css/adminpreviousnext/next.css</name>
+            </action>
         </reference>
+
         <reference name="before_body_end">
             <block type="core/template" name="adminpreviousnext" template="adminpreviousnext/script.phtml" />
         </reference>
-    </adminhtml_catalog_product_edit>
+    </adminpreviousnext>
 </layout>
