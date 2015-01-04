@@ -36,7 +36,7 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
         $nextKey = $currentKey + 1;
         if(isset($productIds[$nextKey])) {
             $nextId = $productIds[$nextKey];
-            $next = Mage::getModel('catalog/product')->load($previousId);
+            $next = Mage::getModel('catalog/product')->load($nextId);
             $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/catalog_product/edit', array('id' => $nextId)));
             $next->setLabel(Mage::helper('adminpreviousnext')->__('Next'));
             return $next;
