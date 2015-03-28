@@ -4,7 +4,7 @@
  *
  * @package     Yireo_AdminPreviousNext
  * @author      Yireo (http://www.yireo.com/)
- * @copyright   Copyright (c) 2014 Yireo (http://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
  * @license     Open Source License
  */
 
@@ -36,7 +36,7 @@ class Yireo_AdminPreviousNext_Block_Customer extends Yireo_AdminPreviousNext_Blo
         $nextKey = $currentKey + 1;
         if(isset($customerIds[$nextKey])) {
             $nextId = $customerIds[$nextKey];
-            $next = Mage::getModel('customer/customer')->load($previousId);
+            $next = Mage::getModel('customer/customer')->load($nextId);
             $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/customer/edit', array('id' => $nextId)));
             $next->setLabel(Mage::helper('adminpreviousnext')->__('Next'));
             return $next;
