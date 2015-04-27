@@ -3,8 +3,8 @@
     "license": "OSL-3.0",
     "type": "magento-module",
     "homepage": "https://www.yireo.com/software/magento-extensions/adminpreviousnext",
-    "description": "Adds a previous/next button on product-edit pages in the backend"
-    "keywords":["composer-installer", "magento"],
+    "description": "Adds a previous/next button on product-edit pages in the backend",
+    "keywords": ["composer-installer", "magento"],
     "authors": [
         {
             "name": "Jisse Reitsma (Yireo)",
