@@ -27,10 +27,10 @@
     <adminpreviousnext>
         <reference name="head">
             <action method="addItem" ifconfig="adminpreviousnext/settings/load_jquery">
-                <type>skin_js</type><name>js/adminpreviousnext/jquery.js</name>
+                <type>skin_js</type><name>adminpreviousnext/js/jquery.js</name>
             </action>
             <action method="addItem">
-                <type>skin_css</type><name>css/adminpreviousnext/next.css</name>
+                <type>skin_css</type><name>adminpreviousnext/css/next.css</name>
             </action>
         </reference>
 
