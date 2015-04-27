@@ -2,6 +2,6 @@
 source/app/code/community/Yireo/AdminPreviousNext                           app/code/community/Yireo/AdminPreviousNext
 source/app/design/adminhtml/default/default/layout/adminpreviousnext.xml    app/design/adminhtml/default/default/layout/adminpreviousnext.xml
 source/app/design/adminhtml/default/default/template/adminpreviousnext      app/design/adminhtml/default/default/template/adminpreviousnext
-source/app/locale/*                                                         app/locale/
+source/app/locale/de_DE                                                     app/locale/de_DE
 source/skin/adminhtml/default/default/adminpreviousnext                     skin/adminhtml/default/default/adminpreviousnext
 source/app/etc/modules/*                                                    app/etc/modules/
