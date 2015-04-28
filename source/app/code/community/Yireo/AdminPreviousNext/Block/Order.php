@@ -36,7 +36,7 @@ class Yireo_AdminPreviousNext_Block_Order extends Yireo_AdminPreviousNext_Block_
         $nextKey = $currentKey + 1;
         if(isset($orderIds[$nextKey])) {
             $nextId = $orderIds[$nextKey];
-            $next = Mage::getModel('sales/order')->load($previousId);
+            $next = Mage::getModel('sales/order')->load($nextId);
             $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/sales_order/view', array('order_id' => $nextId)));
             $next->setLabel(Mage::helper('adminpreviousnext')->__('Next'));
             return $next;
