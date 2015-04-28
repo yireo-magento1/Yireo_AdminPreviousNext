@@ -26,7 +26,7 @@
 
     <adminpreviousnext>
         <reference name="head">
-            <action method="addItem" ifconfig="adminpreviousnext/settings/load_jquery">
+            <action method="addItem">
                 <type>skin_js</type><name>adminpreviousnext/js/domtastic.min.js</name>
             </action>
             <action method="addItem">

@@ -54,32 +54,5 @@
                 </Yireo_AdminPreviousNext>
             </modules>
         </translate>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <adminpreviousnext>
-                                            <title>Yireo_AdminPreviousNext Settings</title>
-                                        </adminpreviousnext>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
     </adminhtml>
-
-    <default>
-        <adminpreviousnext>
-            <settings>
-                <load_jquery>1</load_jquery>
-            </settings>
-        </adminpreviousnext>
-    </default>
 </config>
