@@ -1,0 +1,1 @@
+var yireoDomtastic = $.noConflict();
