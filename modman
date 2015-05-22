@@ -1,11 +1,11 @@
 # Modman file
 source/app/code/community/Yireo/AdminPreviousNext                           app/code/community/Yireo/AdminPreviousNext
-source/app/design/adminhtml/default/default/layout/*                        app/design/adminhtml/default/default/layout/
-source/app/design/adminhtml/default/default/template/*                      app/design/adminhtml/default/default/template/
+source/app/design/adminhtml/default/default/layout/adminpreviousnext.xml    app/design/adminhtml/default/default/layout/adminpreviousnext.xml
+source/app/design/adminhtml/default/default/template/adminpreviousnext      app/design/adminhtml/default/default/template/adminpreviousnext
 source/skin/adminhtml/default/default/images/adminpreviousnext              skin/adminhtml/default/default/images/adminpreviousnext
 source/skin/adminhtml/default/default/css/adminpreviousnext                 skin/adminhtml/default/default/css/adminpreviousnext
 source/skin/adminhtml/default/default/js/adminpreviousnext                  skin/adminhtml/default/default/js/adminpreviousnext
 source/app/locale/de_DE/Yireo_AdminPreviousNext.csv                         app/locale/de_DE/
 source/app/locale/nl_NL/Yireo_AdminPreviousNext.csv                         app/locale/nl_NL/
 source/app/locale/en_US/Yireo_AdminPreviousNext.csv                         app/locale/en_US/
-source/app/etc/modules/*                                                    app/etc/modules/
+source/app/etc/modules/Yireo_AdminPreviousNext.xml                          app/etc/modules/Yireo_AdminPreviousNext.xml
