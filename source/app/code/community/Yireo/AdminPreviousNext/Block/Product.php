@@ -13,6 +13,9 @@
  */
 class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Block_Abstract
 {
+    /**
+     * @return Mage_Catalog_Model_Product
+     */
     public function getPrevious()
     {
         $productIds = $this->getProductIds();
@@ -28,6 +31,9 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
         }
     }
 
+    /**
+     * @return Mage_Catalog_Model_Product
+     */
     public function getNext()
     {
         $productIds = $this->getProductIds();
@@ -43,6 +49,9 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
         }
     }
 
+    /**
+     * @return array
+     */
     public function getProductIds()
     {
         $collection = Mage::getModel('catalog/product')->getCollection();

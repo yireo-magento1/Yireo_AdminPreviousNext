@@ -1,6 +1,6 @@
 <?php
 /**
- * Yireo AdminPreviousNext for Magento 
+ * Yireo AdminPreviousNext for Magento
  *
  * @package     Yireo_AdminPreviousNext
  * @author      Yireo (http://www.yireo.com/)
@@ -13,13 +13,17 @@
  */
 class Yireo_AdminPreviousNext_Block_Customer extends Yireo_AdminPreviousNext_Block_Abstract
 {
+    /**
+     * @return Mage_Customer_Model_Customer
+     */
     public function getPrevious()
     {
         $customerIds = $this->getCustomerIds();
         $currentId = Mage::registry('current_customer')->getId();
         $currentKey = array_search($currentId, $customerIds);
         $previousKey = $currentKey - 1;
-        if($previousKey >= 0 && isset($customerIds[$previousKey])) {
+
+        if ($previousKey >= 0 && isset($customerIds[$previousKey])) {
             $previousId = $customerIds[$previousKey];
             $previous = Mage::getModel('customer/customer')->load($previousId);
             $previous->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/customer/edit', array('id' => $previousId)));
@@ -28,13 +32,16 @@ class Yireo_AdminPreviousNext_Block_Customer extends Yireo_AdminPreviousNext_Blo
         }
     }
 
+    /**
+     * @return Mage_Customer_Model_Customer
+     */
     public function getNext()
     {
         $customerIds = $this->getCustomerIds();
         $currentId = Mage::registry('current_customer')->getId();
         $currentKey = array_search($currentId, $customerIds);
         $nextKey = $currentKey + 1;
-        if(isset($customerIds[$nextKey])) {
+        if (isset($customerIds[$nextKey])) {
             $nextId = $customerIds[$nextKey];
             $next = Mage::getModel('customer/customer')->load($nextId);
             $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/customer/edit', array('id' => $nextId)));
@@ -43,6 +50,9 @@ class Yireo_AdminPreviousNext_Block_Customer extends Yireo_AdminPreviousNext_Blo
         }
     }
 
+    /**
+     * @return array
+     */
     public function getCustomerIds()
     {
         $collection = Mage::getModel('customer/customer')->getCollection();

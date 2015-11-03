@@ -13,6 +13,9 @@
  */
 class Yireo_AdminPreviousNext_Block_Order extends Yireo_AdminPreviousNext_Block_Abstract
 {
+    /**
+     * @return Mage_Sales_Model_Order
+     */
     public function getPrevious()
     {
         $orderIds = $this->getOrderIds();
@@ -24,10 +27,14 @@ class Yireo_AdminPreviousNext_Block_Order extends Yireo_AdminPreviousNext_Block_
             $previous = Mage::getModel('sales/order')->load($previousId);
             $previous->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/sales_order/view', array('order_id' => $previousId)));
             $previous->setLabel(Mage::helper('adminpreviousnext')->__('Previous'));
+
             return $previous;
         }
     }
 
+    /**
+     * @return Mage_Sales_Model_Order
+     */
     public function getNext()
     {
         $orderIds = $this->getOrderIds();
@@ -39,10 +46,14 @@ class Yireo_AdminPreviousNext_Block_Order extends Yireo_AdminPreviousNext_Block_
             $next = Mage::getModel('sales/order')->load($nextId);
             $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/sales_order/view', array('order_id' => $nextId)));
             $next->setLabel(Mage::helper('adminpreviousnext')->__('Next'));
+
             return $next;
         }
     }
 
+    /**
+     * @return array
+     */
     public function getOrderIds()
     {
         $collection = Mage::getModel('sales/order')->getCollection();
