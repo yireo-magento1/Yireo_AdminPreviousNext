@@ -11,13 +11,9 @@
 /**
  * AdminPreviousNext Abstract block
  */
-class Yireo_AdminPreviousNext_Block_Abstract extends Mage_Core_Block_Template
+abstract class Yireo_AdminPreviousNext_Block_Abstract extends Mage_Core_Block_Template
 {
-    public function getPrevious()
-    {
-    }
+    abstract public function getPrevious();
 
-    public function getNext()
-    {
-    }
+    abstract public function getNext();
 }

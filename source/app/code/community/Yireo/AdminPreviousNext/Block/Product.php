@@ -25,7 +25,7 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
         if($previousKey >= 0 && isset($productIds[$previousKey])) {
             $previousId = $productIds[$previousKey];
             $previous = Mage::getModel('catalog/product')->load($previousId);
-            $previous->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/catalog_product/edit', array('id' => $previousId)));
+            $previous->setUrl($this->getProductUrl($previousId));
             $previous->setLabel(Mage::helper('adminpreviousnext')->__('Previous'));
             return $previous;
         }
@@ -43,7 +43,7 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
         if(isset($productIds[$nextKey])) {
             $nextId = $productIds[$nextKey];
             $next = Mage::getModel('catalog/product')->load($nextId);
-            $next->setUrl(Mage::helper('adminhtml')->getUrl('adminhtml/catalog_product/edit', array('id' => $nextId)));
+            $next->setUrl($this->getProductUrl($nextId));
             $next->setLabel(Mage::helper('adminpreviousnext')->__('Next'));
             return $next;
         }
@@ -52,10 +52,25 @@ class Yireo_AdminPreviousNext_Block_Product extends Yireo_AdminPreviousNext_Bloc
     /**
      * @return array
      */
-    public function getProductIds()
+    protected function getProductIds()
     {
         $collection = Mage::getModel('catalog/product')->getCollection();
         $productIds = $collection->getAllIds();
         return $productIds;
+    }
+
+    protected function getProductUrl($productId)
+    {
+        $arguments = array('id' => $productId);
+        $currentParameters = array('store', 'active_tab');
+
+        foreach ($currentParameters as $currentParameter) {
+            $currentValue = Mage::app()->getRequest()->getParam($currentParameter);
+            if (!empty($currentValue)) {
+                $arguments[$currentParameter] = $currentValue;
+            }
+        }
+
+        return Mage::helper('adminhtml')->getUrl('adminhtml/catalog_product/edit', $arguments);
     }
 }
