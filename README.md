@@ -19,3 +19,4 @@ once you're done.
     modman clone https://github.com/yireo/Yireo_AdminPreviousNext
     modman update Yireo_AdminPreviousNext
 
+4) Use composer
